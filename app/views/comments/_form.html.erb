@@ -1,0 +1,12 @@
+<h2>Add a comment:</h2>
+<%= flash[:notice] %>
+<%= form_for([@blog,@blog.comments.build]) do |f| %>
+
+<%= f.label :commenter %><br/>
+<%=f.text_field :commenter %><br/>
+<%= f.label :body %>
+<%= f.text_area :body %>
+<%= f.submit 'add comment'%>
+<% end %>
+<%= link_to 'Edit',edit_blog_path(@blog) %>
+<%= link_to '<<back',blogs_path %>

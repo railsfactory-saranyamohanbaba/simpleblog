@@ -1,0 +1,16 @@
+<p class="notice"><%= notice %></p>
+<p>
+<b>Name :</b>
+<%= @blog.name %>
+</p>
+<p>
+<b>Title :</b>
+<%= @blog.title %>
+</p>
+<p>
+<b>Content :</b>
+<%= @blog.content %>
+</p>
+<h2>Displays all Comments </h2>
+<%= render :partial =>"comments/comment", :collection =>@blog.comments  %>
+<%= render :partial =>"comments/form" %>

@@ -1,0 +1,28 @@
+
+
+<h1>Listing Blogs </h1>
+<%= link_to 'Logout',logout_path %> </a>&nbsp|&nbsp <%= link_to 'new blog', new_blog_path %> 
+&nbsp
+&nbsp
+&nbsp
+&nbsp
+
+<table border= "1">
+
+<tr>
+  <th>Name</th>
+  <th>Title</th>
+  <th>Content</th>
+</tr>
+<% @blogs.each do |blog| %>
+<tr>
+<td><%= blog.name %></td>
+<td><%= blog.title %></td>
+<td><%= blog.content %></td>
+<td><%= link_to 'Show', blog %></td> 
+<td><%= link_to 'Edit', edit_blog_path(blog) %></td>  
+<td><%= link_to 'Destroy', blog, :confirm => 'Are you sure?', :method => :delete %></td>  
+</tr>
+<% end %>
+</table>
+

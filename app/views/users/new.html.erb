@@ -1,0 +1,26 @@
+
+<h1>Sign up as a new user</h1>
+
+
+<% @user.password = @user.password_confirmation = nil %>
+
+
+<%= form_for :user, :url => users_path do |f| -%>
+<p><%= label_tag 'login' %><span style="color: red;" class="error">*</span><span style="padding-left: 100px; color: red;"><%= error_message_on "user", "login" %></span><br/>
+<%= f.text_field :login %></p>
+
+<p><%= label_tag 'name' %><span style="color: red;" class="error">*</span><span style="padding-left: 100px; color: red;"><%= error_message_on "user", "login" %></span><br/>
+<%= f.text_field :name %></p>
+
+<p><%= label_tag 'email' %><span style="color: red;" class="error">*</span><span style="padding-left: 100px; color: red;"><%= error_message_on "user", "login" %></span><br/>
+<%= f.text_field :email %></p>
+
+
+<p><%= label_tag 'password' %><span style="color: red;" class="error">*</span><span style="padding-left: 100px; color: red;"><%= error_message_on "user", "login" %></span><br/>
+<%= f.password_field :password %></p>
+
+<p><%= label_tag 'password_confirmation', 'Confirm Password' %><span style="color: red;" class="error">*</span><span style="padding-left: 100px; color: red;"><%= error_message_on "user", "login" %></span><br/>
+<%= f.password_field :password_confirmation %>
+
+<p><%= submit_tag 'Sign up' %></p>
+<% end -%>
